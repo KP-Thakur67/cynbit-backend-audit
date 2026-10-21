@@ -1,0 +1,14 @@
+# Build output
+target/
+
+# IDE files
+.idea/
+*.iml
+
+# Evidence safety: never commit raw captures
+*.har
+*.log
+
+# Secrets
+.env
+.env.*
