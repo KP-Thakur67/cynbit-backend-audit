@@ -1,0 +1,17 @@
+server:
+  compression:
+    enabled: true
+  # Use "native" only behind a trusted reverse proxy so the real client IP is available
+  # (needed for rate limiting). Also configure server.tomcat.remoteip.internal-proxies.
+  forward-headers-strategy: native
+  error:
+    include-stacktrace: never
+    include-message: never
+    include-binding-errors: never
+spring:
+  mvc:
+    problemdetails:
+      enabled: true          # RFC 9457 application/problem+json for standard MVC errors
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true   # reject unexpected fields
